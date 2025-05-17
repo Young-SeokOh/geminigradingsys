@@ -29,7 +29,9 @@ def styles():
 
 @app.route("/script.js")
 def script():
-    return send_from_directory('.', 'script.js')
+    response = send_from_directory('.', 'script.js')
+    response.headers['Content-Type'] = 'application/javascript; charset=utf-8'
+    return response
 
 def extract_text_from_pdf(pdf_file):
     """PDF 파일에서 텍스트 추출"""
