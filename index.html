@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>고려대학교 수학적 모델링 문제 자동 채점</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h3>수학적 모델링 문제 자동 채점 시스템</h3>
+      <p class="subtitle">Claude AI를 활용한 자동 채점 시스템</p>
+    </div>
+
+    <div class="main-content">
+      <form id="upload-form" enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="image">학생 답안 이미지</label>
+          <input type="file" id="image" name="image" accept="image/*" required />
+        </div>
+        
+        <div class="form-group">
+          <label for="rubric">채점 루브릭</label>
+          <textarea id="rubric" name="rubric" placeholder="채점 기준을 입력하세요" required></textarea>
+        </div>
+
+        <button type="submit">평가 시작</button>
+      </form>
+
+      <div id="loading" style="display: none;">
+        <div class="spinner"></div>
+        <p>답안을 평가하고 있습니다...</p>
+      </div>
+
+      <div id="result" style="display: none;"></div>
+    </div>
+
+    <footer>
+      <p>© 2024 고려대학교 수학적 모델링 자동 채점 시스템</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
