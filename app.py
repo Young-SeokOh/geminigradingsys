@@ -130,8 +130,8 @@ def evaluate():
             print(f"문제 텍스트 길이: {len(problem_text)}")
             print(f"루브릭 텍스트 길이: {len(rubric_text)}")
             
-            # Gemini 모델 설정 및 호출
-            model = genai.GenerativeModel('gemini-pro-vision')
+            # Gemini 모델 설정 및 호출 - 1.5 모델로 업데이트
+            model = genai.GenerativeModel('gemini-1.5-flash')
             
             try:
                 # 생성 요청
@@ -185,8 +185,8 @@ def diagnose():
         # 간단한 API 테스트
         api_status = "테스트 없음"
         try:
-            # Gemini 텍스트 모델로 간단한 테스트
-            text_model = genai.GenerativeModel('gemini-pro')
+            # Gemini 텍스트 모델로 간단한 테스트 - 1.5 모델로 업데이트
+            text_model = genai.GenerativeModel('gemini-1.5-flash')
             test_response = text_model.generate_content("안녕하세요.")
             api_status = "성공" if test_response and hasattr(test_response, 'text') else "실패: 응답 형식 오류"
         except Exception as api_err:
