@@ -23,7 +23,9 @@ def index():
 
 @app.route("/styles.css")
 def styles():
-    return send_from_directory('.', 'styles.css')
+    response = send_from_directory('.', 'styles.css')
+    response.headers['Content-Type'] = 'text/css; charset=utf-8'
+    return response
 
 @app.route("/script.js")
 def script():
